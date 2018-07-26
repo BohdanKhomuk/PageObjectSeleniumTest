@@ -1,5 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class MainPage {
     private WebDriver driver;
@@ -8,40 +10,46 @@ public class MainPage {
         this.driver = driver;
     }
 
-    private By singInButton = By.xpath(".//a[text() = 'Sing in']");
-    private By singUpButton = By.xpath(".//a[text() = 'Sing up']");
-    private By userNameField = By.xpath(".//*[@id = 'user[login]']");
-    private By emailField = By.xpath(".//*[@id = 'user[email]']");
-    private By passwordField = By.xpath(".//*[@id = 'user[password]']");
-    private By singUpFromButton = By.xpath(".//button[text() = 'Sing up for GitHub']");
+    @FindBy(xpath = ".//a[text() = 'Sing in']")
+    private WebElement singInButton;
+    @FindBy(xpath = ".//a[text() = 'Sing up']" )
+    private WebElement singUpButton;
+    @FindBy(xpath = ".//*[@id = 'user[login]']")
+    private WebElement userNameField;
+    @FindBy(xpath = ".//*[@id = 'user[email]']" )
+    private WebElement emailField;
+    @FindBy(xpath = ".//*[@id = 'user[password]']")
+    private WebElement passwordField;
+    @FindBy(xpath = ".//button[text() = 'Sing up for GitHub']")
+    private WebElement singUpFromButton;
 
     public LoginPage clickSignIn(){
-        driver.findElement( singInButton ).click();
+        singInButton.click();
         return new LoginPage( driver );
     }
 
     public SingUpPage clickSignUpButtom(){
-        driver.findElement( singUpButton ).click();
+        singUpButton.click();
         return new SingUpPage( driver );
     }
 
     public SingUpPage clickSignUpFromButton(){
-        driver.findElement( singUpFromButton ).click();
+        singUpFromButton.click();
         return new SingUpPage( driver );
     }
 
     public MainPage typeUserName(String username){
-        driver.findElement( userNameField ).sendKeys( username );
+        userNameField.sendKeys( username );
         return this;
     }
 
     public MainPage typeUserPassword(String password){
-        driver.findElement( passwordField ).sendKeys( password );
+        passwordField.sendKeys( password );
         return this;
     }
 
     public MainPage typeUserEmail(String email){
-        driver.findElement( emailField ).sendKeys( email );
+        emailField.sendKeys( email );
         return this;
     }
 
