@@ -12,7 +12,7 @@ public class LoginPage {
     private By loginField = By.xpath(".//*[@id = 'login_field']");
     private By passwordField = By.xpath(".//*[@id = 'password']");
     private By singInButton = By.xpath(".//input[@type = 'submit']");
-    private By heading = By.xpath( ".//div[contains(@class, 'auth_from_header')]/h1" );
+    private By heading = By.xpath( ".//div[contains(@class, 'auth-form-header p-0')]/h1" );
     private By error = By.xpath( ".//*[@id = 'js-flash-container']//div[@class = 'container']" );
     private By createAcctLink = By.xpath( ".//a[text() = 'Create an account']" );
 

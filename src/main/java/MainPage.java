@@ -10,9 +10,9 @@ public class MainPage {
         this.driver = driver;
     }
 
-    @FindBy(xpath = ".//a[text() = 'Sing in']")
+    @FindBy(xpath = ".//a[text() = 'Sign in']")
     private WebElement singInButton;
-    @FindBy(xpath = ".//a[text() = 'Sing up']" )
+    @FindBy(xpath = ".//a[text() = 'Sign up']" )
     private WebElement singUpButton;
     @FindBy(xpath = ".//*[@id = 'user[login]']")
     private WebElement userNameField;
@@ -20,7 +20,7 @@ public class MainPage {
     private WebElement emailField;
     @FindBy(xpath = ".//*[@id = 'user[password]']")
     private WebElement passwordField;
-    @FindBy(xpath = ".//button[text() = 'Sing up for GitHub']")
+    @FindBy(xpath = ".//button[text() = 'Sign up for GitHub']")
     private WebElement singUpFromButton;
 
     public LoginPage clickSignIn(){

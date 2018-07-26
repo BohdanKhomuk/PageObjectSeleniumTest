@@ -22,5 +22,7 @@ public class MainClass {
         MainPage mainPage = PageFactory.initElements( driver, MainPage.class );
 
         mainPage.register( "testusername", "qweqw@xpr.com", "qwerty123" );
+        //mainPage.clickSignIn();
+
     }
 }
