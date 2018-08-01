@@ -33,24 +33,24 @@ public class MainPageTest {
     @Test
     public void registreFaildTest(){
         MainPage mainPage = PageFactory.initElements( driver, MainPage.class );
-        SingUpPage singUpPage = mainPage.register( "testUser", "testEmail", "testPassword" );
-        String error = singUpPage.getMainErrorText();
+        SignUpPage signUpPage = mainPage.register( "testUser", "testEmail", "testPassword" );
+        String error = signUpPage.getMainErrorText();
         Assert.assertEquals( "There were problems creating your account.", error );
     }
 
     @Test
     public void signUpEmptyUserNameTest(){
         MainPage mainPage = PageFactory.initElements( driver, MainPage.class );
-        SingUpPage singUpPage = mainPage.register( "", "mail", "pass" );
-        String error = singUpPage.getMainErrorText();
+        SignUpPage signUpPage = mainPage.register( "", "mail", "pass" );
+        String error = signUpPage.getMainErrorText();
         Assert.assertEquals( "Login can'n be blank", error );
     }
 
     @Test
     public void signUpInvalidEmailTest(){
         MainPage mainPage = PageFactory.initElements( driver, MainPage.class );
-        SingUpPage singUpPage = mainPage.register( "userName", "mail", "pass" );
-        String error = singUpPage.getEmailErrorText();
+        SignUpPage signUpPage = mainPage.register( "userName", "mail", "pass" );
+        String error = signUpPage.getEmailErrorText();
         Assert.assertEquals( "Email is invalid or already taken", error );
     }
 

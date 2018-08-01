@@ -41,8 +41,8 @@ public class LoginPage {
         return driver.findElement( error ).getText();
     }
 
-    public SingUpPage createAccount(){
+    public SignUpPage createAccount(){
         driver.findElement( createAcctLink ).click();
-        return new SingUpPage( driver );
+        return new SignUpPage( driver );
     }
 }

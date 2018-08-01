@@ -1,4 +1,3 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,14 +27,14 @@ public class MainPage {
         return new LoginPage( driver );
     }
 
-    public SingUpPage clickSignUpButtom(){
+    public SignUpPage clickSignUpButtom(){
         singUpButton.click();
-        return new SingUpPage( driver );
+        return new SignUpPage( driver );
     }
 
-    public SingUpPage clickSignUpFromButton(){
+    public SignUpPage clickSignUpFromButton(){
         singUpFromButton.click();
-        return new SingUpPage( driver );
+        return new SignUpPage( driver );
     }
 
     public MainPage typeUserName(String username){
@@ -53,12 +52,12 @@ public class MainPage {
         return this;
     }
 
-    public SingUpPage register(String username, String email, String password){
+    public SignUpPage register(String username, String email, String password){
         this.typeUserName(username);
         this.typeUserEmail( email );
         this.typeUserPassword( password );
         this.clickSignUpFromButton();
-        return new SingUpPage( driver );
+        return new SignUpPage( driver );
     }
 
 }

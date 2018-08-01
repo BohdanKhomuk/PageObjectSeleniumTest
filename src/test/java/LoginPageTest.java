@@ -44,8 +44,8 @@ public class LoginPageTest {
     @Test
     public void createAccTest(){
         LoginPage loginPage = PageFactory.initElements( driver, LoginPage.class );
-        SingUpPage singUpPage = loginPage.createAccount();
-        String heading = singUpPage.getHeadingText();
+        SignUpPage signUpPage = loginPage.createAccount();
+        String heading = signUpPage.getHeadingText();
         Assert.assertEquals( "Join GitHub", heading );
     }
 
